@@ -387,10 +387,10 @@
 
                                         <section class="post">
                                             {block:Text}
-                                            <div class="post-content">
-                                                {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                                            <div class="mdl-card mdl-shadow--2dp">
+                                                {block:Title}<div class="mdl-card__title"><h2 class="mdl-card__title-text"><a href="{Permalink}">{Title}</a></h2></div>{/block:Title}
                                                 {block:Body}
-                                                <div class="body-text">
+                                                <div class="mdl-card__supporting-text">
                                                     {Body}
                                                 </div>
                                                 {/block:Body}
@@ -398,14 +398,15 @@
                                             {/block:Text}
 
                                             {block:Photo}
-                                            <figure class="post-content {block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
-                                                <div class="photo-wrapper">
+                                            
+                                            <figure class="mdl-card__media {block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
+                                                <div class="mdl-card__media">
                                                     <div class="photo-wrapper-inner">
                                                         {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"{block:LivePhoto}data-live-photo="{LivePhotoURL}" data-live-photo-still-image-time="{LivePhotoStillImageTime}"{/block:LivePhoto}>{LinkCloseTag}
                                                     </div>
                                                 </div>
                                                 {block:Caption}
-                                                <figcaption class="caption">
+                                                <figcaption class="mdl-card__supporting-text">
                                                     {Caption}
                                                 </figcaption>
                                                 {/block:Caption}
@@ -413,10 +414,10 @@
                                             {/block:Photo}
 
                                             {block:Photoset}
-                                            <figure class="post-content photoset {block:Caption}with-caption{/block:Caption}">
+                                            <figure class="mdl-card__media photoset {block:Caption}with-caption{/block:Caption}">
                                                 {Photoset}
                                                 {block:Caption}
-                                                <figcaption class="caption">
+                                                <figcaption class="mdl-card__supporting-text">
                                                     {Caption}
                                                 </figcaption>
                                                 {/block:Caption}
@@ -424,7 +425,7 @@
                                             {/block:Photoset}
 
                                             {block:Quote}
-                                            <div class="post-content">
+                                            <div class="mdl-card mdl-shadow--2dp">
                                                 <blockquote class="{Length}">
                                                     {Quote}
                                                 </blockquote>
@@ -436,11 +437,11 @@
 
 
                                             {block:Link}
-                                            <div class="post-content{block:Description} with-caption{/block:Description}{block:Thumbnail} with-thumbnail{/block:Thumbnail}">
+                                            <div class="mdl-card{block:Description} with-caption{/block:Description}{block:Thumbnail} with-thumbnail{/block:Thumbnail}">
                                                 <div class="link-wrapper">
                                                     <a {Target} href="{URL}" class="link">
                                                         {block:Thumbnail}
-                                                        <div class="link-thumbnail"><img src="{Thumbnail-HighRes}" alt="" /></div>
+                                                        <div class="mdl-card__media"><img src="{Thumbnail-HighRes}" alt="" /></div>
                                                         {/block:Thumbnail}
                                                         <div class="link-text-wrapper clearfix">
                                                             <div class="link-text">
@@ -459,7 +460,7 @@
                                                     </a>
                                                 </div>
                                                 {block:Description}
-                                                <div class="caption">
+                                                <div class="mdl-card__suporting-text">
                                                     {Description}
                                                 </div>
                                                 {/block:Description}
@@ -468,7 +469,7 @@
 
 
                                             {block:Chat}
-                                            <div class="post-content">
+                                            <div class="mdl-card mdl-shadow--2dp">
                                                 {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                                 <ul class="conversation">
                                                 {block:Lines}
@@ -480,14 +481,14 @@
 
 
                                             {block:Audio}
-                                            <div class="post-content {block:Caption}with-caption{/block:Caption}">
+                                            <div class="mdl-card {block:Caption}with-caption{/block:Caption}">
                                                 <div class="audio_container">
                                                     {block:AudioEmbed}
                                                         {AudioEmbed color="white"}
                                                     {/block:AudioEmbed}
                                                 </div>
                                                 {block:Caption}
-                                                <div class="caption">
+                                                <div class="mdl-card__suporting-text">
                                                     {Caption}
                                                 </div>
                                                 {/block:Caption}
@@ -496,12 +497,12 @@
 
 
                                             {block:Video}
-                                            <figure class="post-content {block:Caption}with-caption{/block:Caption}">
+                                            <figure class="mdl-card__media {block:Caption}with-caption{/block:Caption}">
                                                 <div class="video-wrapper">
                                                     {Video-700}
                                                 </div>
                                                 {block:Caption}
-                                                <figcaption class="caption">
+                                                <figcaption class="mdl-card__supporting-text">
                                                     {Caption}
                                                 </figcaption>
                                                 {/block:Caption}
@@ -509,7 +510,7 @@
                                             {/block:Video}
 
                                             {block:Answer}
-                                            <div class="post-content">
+                                            <div class="mdl-card mdl-shadow--2dp">
                                                 <div class="note-item note-item-asker">
                                                     <div class="text">
                                                         <p class="asker"><strong>{Asker}</strong> asked:</p>
@@ -713,7 +714,7 @@
                                     <div class="highlighted-posts">
                                         {Block:HighlightedPosts}
                                         <div class="post post-micro post-type-{PostType}" data-type="{PostType}">
-                                            <div class="post-content">
+                                            <div class="mdl-card">
                                                 <div class="post-content-inner">
                                                     <div class="post-thumbnail-container" style="background-image: url('{PhotoURL-250}');"></div>
                                                 </div>
@@ -735,7 +736,7 @@
                                 <div class="posts">
                                 {Block:HighlightedPosts limit="3"}
                                     <div class="post post-micro post-type-{PostType}" data-type="{PostType}">
-                                        <div class="post-content">
+                                        <div class="mdl-card">
                                             <div class="post-content-inner">
                                                 <div class="post-thumbnail-container" style="background-image: url('{PhotoURL-250}');"></div>
                                             </div>
@@ -763,10 +764,10 @@
 
                                                 <section class="post">
                                                     {block:Text}
-                                                    <div class="post-content">
-                                                        {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                                                    <div class="mdl-card mdl-shadow--2dp">
+                                                        {block:Title}<h2 class="mdl-card__title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                                         {block:Body}
-                                                        <div class="body-text">
+                                                        <div class="mdl-card__supporting-text">
                                                             {Body}
                                                         </div>
                                                         {/block:Body}
@@ -800,7 +801,7 @@
                                                     {/block:Photoset}
 
                                                     {block:Quote}
-                                                    <div class="post-content">
+                                                    <div class="mdl-card mdl-shadow--2dp">
                                                         <blockquote class="{Length}">
                                                             {Quote}
                                                         </blockquote>
@@ -843,7 +844,7 @@
                                                     {/block:Link}
 
                                                     {block:Chat}
-                                                    <div class="post-content">
+                                                    <div class="mdl-card mdl-shadow--2dp">
                                                         {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                                         <ul class="conversation">
                                                         {block:Lines}
@@ -882,7 +883,7 @@
                                                     {/block:Video}
 
                                                     {block:Answer}
-                                                    <div class="post-content">
+                                                    <div class="mdl-card mdl-shadow--2dp">
                                                         <div class="note-item note-item-asker">
                                                             <div class="text">
                                                                 <p class="asker"><strong>{Asker}</strong> asked:</p>
@@ -1025,7 +1026,7 @@
                                         {/block:RebloggedFrom}
                                         <section class="post">
                                             {block:Text}
-                                            <div class="post-content">
+                                            <div class="mdl-card mdl-shadow--2dp">
                                                 {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                                 {block:Body}
                                                 <div class="body-text">
@@ -1062,7 +1063,7 @@
                                             {/block:Photoset}
 
                                             {block:Quote}
-                                            <div class="post-content">
+                                            <div class="mdl-card mdl-shadow--2dp">
                                                 <blockquote class="{Length}">
                                                     {Quote}
                                                 </blockquote>
@@ -1105,7 +1106,7 @@
                                             {/block:Link}
 
                                             {block:Chat}
-                                            <div class="post-content">
+                                            <div class="mdl-card mdl-shadow--2dp">
                                                 {block:Title}<h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                                 <ul class="conversation">
                                                 {block:Lines}
@@ -1144,7 +1145,7 @@
                                             {/block:Video}
 
                                             {block:Answer}
-                                            <div class="post-content">
+                                            <div class="mdl-card mdl-shadow--2dp">
                                                 <div class="note-item note-item-asker">
                                                     <div class="text">
                                                         <p class="asker"><strong>{Asker}</strong> asked:</p>
